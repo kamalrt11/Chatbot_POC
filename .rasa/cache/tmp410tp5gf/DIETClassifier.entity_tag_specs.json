@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-location",
+      "2": "I-location",
+      "3": "L-location",
+      "4": "U-location",
+      "5": "B-product_id",
+      "6": "I-product_id",
+      "7": "L-product_id",
+      "8": "U-product_id",
+      "9": "B-soft",
+      "10": "I-soft",
+      "11": "L-soft",
+      "12": "U-soft",
+      "13": "B-software_name",
+      "14": "I-software_name",
+      "15": "L-software_name",
+      "16": "U-software_name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-location": 1,
+      "I-location": 2,
+      "L-location": 3,
+      "U-location": 4,
+      "B-product_id": 5,
+      "I-product_id": 6,
+      "L-product_id": 7,
+      "U-product_id": 8,
+      "B-soft": 9,
+      "I-soft": 10,
+      "L-soft": 11,
+      "U-soft": 12,
+      "B-software_name": 13,
+      "I-software_name": 14,
+      "L-software_name": 15,
+      "U-software_name": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

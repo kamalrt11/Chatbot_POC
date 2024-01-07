@@ -1,0 +1,162 @@
+version: "3.1"
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  # - story: weather long
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: weather
+  #     - action: utter_ask_location
+  #     - intent: city_info
+  #     - action: utter_getting_weather
+  #     - action: action_get_weather
+  #     - intent: thanks
+  #     - action: utter_welcome
+  #     - action: utter_goodbye
+
+  # - story: weather short
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: weather_for_location
+  #     - action: utter_getting_weather
+  #     - action: action_get_weather
+  #     - intent: thanks
+  #     - action: utter_welcome
+  #     - action: utter_goodbye
+
+  # - story: New
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: weather_for_location
+  #     - action: utter_getting_weather
+  #     - action: action_get_weather
+
+  - story: Excel
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: excel_query
+      - action: action_read_excel_data
+
+  - story: Query product information
+    steps:
+      - intent: query_product_info
+      - action: action_query_excel_data
+
+  - story: Get Architect - Ask for Software
+    steps:
+      - intent: get_architect
+      - action: action_ask_for_software
+      - intent: inform
+      - slot_was_set:
+          - software: "Microsoft Office" # Adjust this slot setting according to user input
+      - action: action_fetch_software_info
+
+  - story: Get Architect - Software Provided
+    steps:
+      - intent: get_architect
+      - action: action_ask_for_software
+      - intent: inform
+      - slot_was_set:
+          - software: "Google Chrome" # Adjust this slot setting according to user input
+      - action: action_fetch_software_info
+
+  - story: Get Architect - Software Not Found
+    steps:
+      - intent: get_architect
+      - action: action_ask_for_software
+      - intent: inform
+      - slot_was_set:
+          - software: "Zoom" # Adjust this slot setting according to user input
+      - action: action_fetch_software_info
+
+  - story: Get PhaseOut Date
+    steps:
+      - intent: get_phaseout_date
+      - action: action_ask_for_software
+      - intent: inform
+      - slot_was_set:
+          - software: "Docker" # Adjust this slot setting according to user input
+      - action: action_fetch_software_info
+
+  - story: Get Vendor Name
+    steps:
+      - intent: get_vendor_name
+      - action: action_ask_for_software
+      - intent: inform
+      - slot_was_set:
+          - software: "Atlassian Jira" # Adjust this slot setting according to user input
+      - action: action_fetch_software_info
+
+  - story: Check Licence
+    steps:
+      - intent: check_license_required
+      - action: action_ask_for_software
+      - intent: inform
+      - slot_was_set:
+          - software: "Wondershare Filmora" # Adjust this slot setting according to user input
+      - action: action_fetch_software_info
+
+  - story: Check TSC Status
+    steps:
+      - intent: check_tsc_status
+      - action: action_ask_for_software
+      - intent: inform
+      - slot_was_set:
+          - software: "SketchUp" # Adjust this slot setting according to user input
+      - action: action_fetch_software_info
+
+  - story: Get Installation Count
+    steps:
+      - intent: get_installation_count
+      - action: action_ask_for_software
+      - intent: inform
+      - slot_was_set:
+          - software: "MATLAB" # Adjust this slot setting according to user input
+      - action: action_fetch_software_info
+
+
+  # story: Architect Name
+  # steps:
+  #   - intent: greet
+  #   - action: utter_greet
+  #   - intent: query_architect_name
+  #   - action: action_query_excel_data
+  
+
+  # story: Query architect and provide software name
+  # steps:
+  #   - intent: query_architect
+  #   - action: utter_ask_software_name
+  #   - intent: provide_software_name
+  #   - action: action_extract_software_name
+  #   - action: action_query_excel_data

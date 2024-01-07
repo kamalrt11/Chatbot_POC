@@ -1,0 +1,268 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  - intent: weather
+    examples: |
+      - what's the weather
+      - what is the temperature today
+      - what is the temperature
+      - i want to know the teperature
+      - tell me about weather
+      - hows the weather today
+
+  - intent: weather_for_location
+    examples: |
+      - what is the weather in [Noida](location)
+      - what is the weather in [New Delhi](location)
+      - weather in [Mumbai](location)
+      - Today's weather in [Bangalore](location)
+      - [Kolkata](location) weather
+      - Tell me weather of [Hyderabad](location)
+      - Can you tell me weather of [London](location)
+
+  - intent: city_info
+    examples: |
+      - [New Delhi](location)
+      - [India](location)
+      - [Mumbai](location)
+      - [Noida](location)
+      - [Kolkata](location)
+      - [Bangalore](location)
+      - [London](location)
+
+  - intent: thanks
+    examples: |
+      - thanks
+      - thank you
+      - OK
+
+  - intent: excel_query
+    examples: |
+      - Read Data
+      - What is in Excel
+      - Excel please
+
+  - intent: query_product_info
+    examples: |
+      - Can you provide details for product ID [6](product_id)?
+      - I want information about product ID [AutoCAD](product_id).
+
+  # - intent: query_architect_name
+  #  examples: |
+  #    - What is the architect name for [AutoCAD](software_name)?
+  #   - Who is the architect of [HandBrake](software_name)?
+  #   - Can you tell me the architect name for [BlueStacks](software_name)?
+  #  - Architect name of [Xcode](software_name)?
+  # - What's the architect for [Spotify](software_name)?
+  #- Tell me about the architect for [Final Cut Pro](software_name)
+
+  # - intent: query_architect
+  #  examples: |
+  ##    - Tell me about the architect
+  ##  - Can you provide details about the architect?
+  # - I'm curious about the architect
+
+  # - intent: provide_software_name
+  #  examples: |
+  #   - [Blender](soft)
+
+  - intent: get_architect
+    examples: |
+      - Who is the architect?
+      - Who created this software?
+      # Add more generic intent examples
+
+  - intent: inform
+    examples: |
+      - [Microsoft Office](Software)
+      - [Google Chrome](Software)
+      - [Zoom](Software)
+      - [Microsoft Windows](Software)
+      - [Microsoft Office](Software)
+      - [Adobe Photoshop](Software)
+      - [Google Chrome](Software)
+      - [Mozilla Firefox](Software)
+      - [Apple macOS](Software)
+      - [Android OS](Software)
+      - [Ubuntu](Software)
+      - [Adobe Illustrator](Software)
+      - [AutoCAD](Software)
+      - [Oracle Database](Software)
+      - [QuickBooks](Software)
+      - [Slack](Software)
+      - [Skype](Software)
+      - [Adobe Premiere Pro](Software)
+      - [Salesforce](Software)
+      - [SAP ERP](Software)
+      - [Dropbox](Software)
+      - [IBM Watson](Software)
+      - [Zoom](Software)
+      - [Norton Antivirus](Software)
+      - [Bitdefender](Software)
+      - [McAfee Antivirus](Software)
+      - [Apple iOS](Software)
+      - [Spotify](Software)
+      - [Atlassian Jira](Software)
+      - [WordPress](Software)
+      - [Amazon Web Services (AWS)](Software)
+      - [Google Workspace](Software)
+      - [Docker](Software)
+      - [VMWare](Software)
+      - [IntelliJ IDEA](Software)
+      - [Notion](Software)
+      - [GitLab](Software)
+      - [Trello](Software)
+      - [MATLAB](Software)
+      - [7-Zip](Software)
+      - [WinRAR](Software)
+      - [GIMP](Software)
+      - [Inkscape](Software)
+      - [Audacity](Software)
+      - [VLC Media Player](Software)
+      - [Evernote](Software)
+      - [TeamViewer](Software)
+      - [Red Hat Enterprise Linux](Software)
+      - [FileZilla](Software)
+      - [Putty](Software)
+      - [HandBrake](Software)
+      - [Sublime Text](Software)
+      - [Apache HTTP Server](Software)
+      - [Visual Studio Code](Software)
+      - [Wireshark](Software)
+      - [Jupyter](Software)
+      - [Blender](Software)
+      - [Audible](Software)
+      - [Kaspersky Antivirus](Software)
+      - [Grammarly](Software)
+      - [OBS Studio](Software)
+      - [Malwarebytes](Software)
+      - [Google Earth](Software)
+      - [Cisco Webex](Software)
+      - [Autodesk Maya](Software)
+      - [Camtasia](Software)
+      - [Adobe Acrobat](Software)
+      - [SketchUp](Software)
+      - [Unity](Software)
+      - [Paint.NET](Software)
+      - [WinZip](Software)
+      - [Xcode](Software)
+      - [Wacom Drivers](Software)
+      - [Sage 50](Software)
+      - [Citrix Workspace](Software)
+      - [Visual Studio](Software)
+      - [Evernote](Software)
+      - [SolidWorks](Software)
+      - [Notepad++](Software)
+      - [CorelDRAW](Software)
+      - [Blender](Software)
+      - [OBS Studio](Software)
+      - [Google SketchUp](Software)
+      - [Citrix Receiver](Software)
+      - [Arduino IDE](Software)
+      - [MATLAB](Software)
+      - [Norton 360](Software)
+      - [McAfee LiveSafe](Software)
+      - [FileMaker](Software)
+      - [BlueStacks](Software)
+      - [PuTTY](Software)
+      - [TeamViewer](Software)
+      - [CyberLink PowerDVD](Software)
+      - [Bluebeam Revu](Software)
+      - [Avid Pro Tools](Software)
+      - [Corel Painter](Software)
+      - [Kaspersky Total Security](Software)
+      - [Figma](Software)
+      - [Corel VideoStudio](Software)
+      - [OBS Studio](Software)
+      - [Wondershare Filmora](Software)
+      - [Wolfram Mathematica](Software)
+      - [Final Cut Pro](Software)

@@ -1,0 +1,152 @@
+version: '3.0'
+
+nlu:
+
+  - intent: get_phaseout_date
+    examples: |
+      - When will the software be phased out?
+      - Phaseout date?
+      - What is the phaseout date?
+
+  - intent: get_vendor_name
+    examples: |
+      - Who is the vendor?
+      - Vendor name?
+
+  - intent: check_license_required
+    examples: |
+      - Is a license required?
+      - License needed?
+
+  - intent: check_tsc_status
+    examples: |
+      - What is the TSC status?
+      - TSC status?
+
+  - intent: get_installation_count
+    examples: |
+      - How many installations are there?
+      - Installation count?
+
+
+  - intent: get_architect
+    examples: |
+      - What is the architect name ?
+      - Who is the architect ?
+      - Can you tell me the architect?
+      - Architect name?
+      - What's the architect?
+      - Tell me about the architect.
+      
+
+  - lookup: software_lookup
+    examples: |
+      - Microsoft Windows, Win10, Win
+      - Microsoft Office, Office Suite, MS Office
+      - Google Chrome, Chrome, Google Browser
+      - Adobe Photoshop, Photoshop, Adobe Edit
+        
+  - intent: inform
+    examples:
+      - text: I need information about [Microsoft Windows](Software)
+      - text: I need information about [Microsoft Office](Software)
+      - text: I need information about [Adobe Photoshop](Software)
+      - text: I need information about [Google Chrome](Software)
+      - text: I need information about [Mozilla Firefox](Software)
+      - text: I need information about [Apple macOS](Software)
+      - text: I need information about [Android OS](Software)
+      - text: I need information about [Ubuntu](Software)
+      - text: I need information about [Adobe Illustrator](Software)
+      - text: I need information about [AutoCAD](Software)
+      - text: I need information about [Oracle Database](Software)
+      - text: I need information about [QuickBooks](Software)
+      - text: I need information about [Slack](Software)
+      - text: I need information about [Skype](Software)
+      - text: I need information about [Adobe Premiere Pro](Software)
+      - text: I need information about [Salesforce](Software)
+      - text: I need information about [SAP ERP](Software)
+      - text: I need information about [Dropbox](Software)
+      - text: I need information about [IBM Watson](Software)
+      - text: I need information about [Zoom](Software)
+      - text: I need information about [Norton Antivirus](Software)
+      - text: I need information about [Bitdefender](Software)
+      - text: I need information about [McAfee Antivirus](Software)
+      - text: I need information about [Apple iOS](Software)
+      - text: I need information about [Spotify](Software)
+      - text: I need information about [Atlassian Jira](Software)
+      - text: I need information about [WordPress](Software)
+      - text: I need information about [Amazon Web Services (AWS)](Software)
+      - text: I need information about [Google Workspace](Software)
+      - text: I need information about [Docker](Software)
+      - text: I need information about [VMWare](Software)
+      - text: I need information about [IntelliJ IDEA](Software)
+      - text: I need information about [Notion](Software)
+      - text: I need information about [GitLab](Software)
+      - text: I need information about [Trello](Software)
+      - text: I need information about [MATLAB](Software)
+      - text: I need information about [7-Zip](Software)
+      - text: I need information about [WinRAR](Software)
+      - text: I need information about [GIMP](Software)
+      - text: I need information about [Inkscape](Software)
+      - text: I need information about [Audacity](Software)
+      - text: I need information about [VLC Media Player](Software)
+      - text: I need information about [Evernote](Software)
+      - text: I need information about [TeamViewer](Software)
+      - text: I need information about [Red Hat Enterprise Linux](Software)
+      - text: I need information about [FileZilla](Software)
+      - text: I need information about [Putty](Software)
+      - text: I need information about [HandBrake](Software)
+      - text: I need information about [Sublime Text](Software)
+      - text: I need information about [Apache HTTP Server](Software)
+      - text: I need information about [Visual Studio Code](Software)
+      - text: I need information about [Wireshark](Software)
+      - text: I need information about [Jupyter](Software)
+      - text: I need information about [Blender](Software)
+      - text: I need information about [Audible](Software)
+      - text: I need information about [Kaspersky Antivirus](Software)
+      - text: I need information about [Grammarly](Software)
+      - text: I need information about [OBS Studio](Software)
+      - text: I need information about [Malwarebytes](Software)
+      - text: I need information about [Google Earth](Software)
+      - text: I need information about [Cisco Webex](Software)
+      - text: I need information about [Autodesk Maya](Software)
+      - text: I need information about [Camtasia](Software)
+      - text: I need information about [Adobe Acrobat](Software)
+      - text: I need information about [SketchUp](Software)
+      - text: I need information about [Unity](Software)
+      - text: I need information about [Paint.NET](Software)
+      - text: I need information about [WinZip](Software)
+      - text: I need information about [Xcode](Software)
+      - text: I need information about [Wacom Drivers](Software)
+      - text: I need information about [Sage 50](Software)
+      - text: I need information about [Citrix Workspace](Software)
+      - text: I need information about [Visual Studio](Software)
+      - text: I need information about [Evernote](Software)
+      - text: I need information about [SolidWorks](Software)
+      - text: I need information about [Notepad++](Software)
+      - text: I need information about [CorelDRAW](Software)
+      - text: I need information about [Blender](Software)
+      - text: I need information about [OBS Studio](Software)
+      - text: I need information about [Google SketchUp](Software)
+      - text: I need information about [Citrix Receiver](Software)
+      - text: I need information about [Arduino IDE](Software)
+      - text: I need information about [MATLAB](Software)
+      - text: I need information about [Norton 360](Software)
+      - text: I need information about [McAfee LiveSafe](Software)
+      - text: I need information about [FileMaker](Software)
+      - text: I need information about [BlueStacks](Software)
+      - text: I need information about [PuTTY](Software)
+      - text: I need information about [TeamViewer](Software)
+      - text: I need information about [CyberLink PowerDVD](Software)
+      - text: I need information about [Bluebeam Revu](Software)
+      - text: I need information about [Avid Pro Tools](Software)
+      - text: I need information about [Corel Painter](Software)
+      - text: I need information about [Kaspersky Total Security](Software)
+      - text: I need information about [Figma](Software)
+      - text: I need information about [Corel VideoStudio](Software)
+      - text: I need information about [OBS Studio](Software)
+      - text: I need information about [Wondershare Filmora](Software)
+      - text: I need information about [Wolfram Mathematica](Software)
+      - text: I need information about [Final Cut Pro](Software)
+
+

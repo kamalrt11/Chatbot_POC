@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-Software",
+      "2": "I-Software",
+      "3": "L-Software",
+      "4": "U-Software",
+      "5": "B-location",
+      "6": "I-location",
+      "7": "L-location",
+      "8": "U-location",
+      "9": "B-product_id",
+      "10": "I-product_id",
+      "11": "L-product_id",
+      "12": "U-product_id",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-Software": 1,
+      "I-Software": 2,
+      "L-Software": 3,
+      "U-Software": 4,
+      "B-location": 5,
+      "I-location": 6,
+      "L-location": 7,
+      "U-location": 8,
+      "B-product_id": 9,
+      "I-product_id": 10,
+      "L-product_id": 11,
+      "U-product_id": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

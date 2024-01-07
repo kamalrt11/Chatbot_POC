@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-Software",
+      "2": "I-Software",
+      "3": "L-Software",
+      "4": "U-Software",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-Software": 1,
+      "I-Software": 2,
+      "L-Software": 3,
+      "U-Software": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]
