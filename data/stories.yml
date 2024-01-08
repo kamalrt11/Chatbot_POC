@@ -144,6 +144,51 @@ stories:
           - software: "MATLAB" # Adjust this slot setting according to user input
       - action: action_fetch_software_info
 
+  - story: Get Phaseout Date (Slot set)
+    steps:
+      - intent: get_phaseout_date
+      - slot_was_set:
+          - software
+      - action: action_fetch_software_info
+
+  - story: Get Installation Count (Slot set)
+    steps:
+      - intent: get_installation_count
+      - slot_was_set:
+          - software
+      - action: action_fetch_software_info
+
+  - story: Get Vendor (Slot set)
+    steps:
+      - intent: get_vendor_name
+      - slot_was_set:
+          - software
+      - action: action_fetch_software_info
+
+  - story: Get License Required (Slot set)
+    steps:
+      - intent: check_license_required
+      - slot_was_set:
+          - software
+      - action: action_fetch_software_info
+
+  - story: Check TSC Status (Slot set)
+    steps:
+      - intent: check_tsc_status
+      - slot_was_set:
+          - software
+      - action: action_fetch_software_info
+
+  - story: Get Architect (Slot set)
+    steps:
+      - intent: get_architect
+      - slot_was_set:
+          - software
+      - action: action_fetch_software_info
+
+  
+
+  
 
   # story: Architect Name
   # steps:
@@ -151,7 +196,6 @@ stories:
   #   - action: utter_greet
   #   - intent: query_architect_name
   #   - action: action_query_excel_data
-  
 
   # story: Query architect and provide software name
   # steps:

@@ -1,0 +1,6 @@
+[
+  {
+    "name": "software_lookup",
+    "pattern": "(\\bMicrosoft\\ Windows,\\ Win10,\\ Win\\b|\\bMicrosoft\\ Office,\\ Office\\ Suite,\\ MS\\ Office\\b|\\bGoogle\\ Chrome,\\ Chrome,\\ Google\\ Browser\\b|\\bAdobe\\ Photoshop,\\ Photoshop,\\ Adobe\\ Edit\\b)"
+  }
+]

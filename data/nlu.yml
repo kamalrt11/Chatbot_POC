@@ -7,26 +7,44 @@ nlu:
       - When will the software be phased out?
       - Phaseout date?
       - What is the phaseout date?
+      - What is the phaseout date of [Microsoft Office](Software)?
+      - Phaseout date for [Adobe Photoshop](Software)?
+      - When will [Atlassian Jira](Software) be phased out?
+      - When is the end of life for [Oracle Database](Software)?
+      
 
   - intent: get_vendor_name
     examples: |
       - Who is the vendor?
       - Vendor name?
+      - What is the vendor for [Audible](Software)?
+      - Who supplies [Visual Studio Code](Software)?
+      - Vendor name for [Grammarly](Software)
 
   - intent: check_license_required
     examples: |
       - Is a license required?
       - License needed?
+      - Is a license required for [Camtasia](Software)?
+      - Does [Unity](Software) need a license?
+
 
   - intent: check_tsc_status
     examples: |
       - What is the TSC status?
       - TSC status?
+      - What is the TSC status for [Evernote](Software)?
+      - TSC status of [FileZilla](Software)
+      - Tell me about the TSC status for [Notion](Software)
+      
 
   - intent: get_installation_count
     examples: |
       - How many installations are there?
       - Installation count?
+      - How many installations does [Sage 50](Software) have?
+      - Tell me the installation count for [Microsoft Office](Software)
+      - What's the installation count of [SketchUp](Software)?
 
 
   - intent: get_architect
@@ -37,6 +55,9 @@ nlu:
       - Architect name?
       - What's the architect?
       - Tell me about the architect.
+      - Who is the architect of [IntelliJ IDEA](Software)?
+      - Architect for [Dropbox](Software)
+      - Name the architect for [7-Zip](Software)
       
 
   - lookup: software_lookup

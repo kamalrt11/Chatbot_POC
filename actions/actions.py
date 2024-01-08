@@ -283,22 +283,32 @@ class ActionFetchSoftwareInfo(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # dispatcher.utter_message(text=f" Iam here")
 
         software_name = tracker.get_slot('software')
+        # dispatcher.utter_message(text=f"{software_name}")
+
         data = pd.read_excel('MOCK_DATA.xlsx')
 
         user_events = [event for event in tracker.events if event.get("event") == "user"]
 
         prev_intent = None
 
+        # if len(user_events) > 1:
+        #     prev_intent = user_events[-2].get("parse_data", {}).get("intent", {}).get("name")
+        # elif len(user_events) > 0:
+        #     prev_intent = user_events[-1].get("parse_data", {}).get("intent", {}).get("name")
+
         if len(user_events) > 1:
-            prev_intent = user_events[-2].get("parse_data", {}).get("intent", {}).get("name")
-        elif len(user_events) > 0:
-            prev_intent = user_events[0].get("parse_data", {}).get("intent", {}).get("name")
+            if user_events[-1].get("parse_data", {}).get("intent", {}).get("name") == "inform":
+                prev_intent = user_events[-2].get("parse_data", {}).get("intent", {}).get("name")
+            else:
+                prev_intent = user_events[-1].get("parse_data", {}).get("intent", {}).get("name")
 
         matched_software = process.extractOne(software_name, data['Software'], scorer=fuzz.token_sort_ratio)
 
-        if matched_software[1] >= 60:
+        if matched_software[1] >= 40:
             software_name = matched_software[0]
 
             row = data[data['Software'] == software_name]
@@ -306,27 +316,33 @@ class ActionFetchSoftwareInfo(Action):
             if not row.empty and prev_intent:
                 if prev_intent == 'get_phaseout_date':
                     phaseout_date = row['Phaseout Date'].values[0]
-                    dispatcher.utter_message(text=f"Phaseout Date: {phaseout_date}")
+                    dispatcher.utter_message(text=f"Phaseout Date of {software_name} is {phaseout_date}")
+                    return [SlotSet("software", None)]
 
                 elif prev_intent == 'get_vendor_name':
                     vendor_name = row['Vendor'].values[0]
-                    dispatcher.utter_message(text=f"Vendor Name: {vendor_name}")
+                    dispatcher.utter_message(text=f"Vendor of {software_name} is {vendor_name}")
+                    return [SlotSet("software", None)]
 
                 elif prev_intent == 'check_license_required':
                     license_required = row['License Required'].values[0]
-                    dispatcher.utter_message(text=f"License Required: {license_required}")
+                    dispatcher.utter_message(text=f"License Status for {software_name}: {license_required}")
+                    return [SlotSet("software", None)]
 
                 elif prev_intent == 'check_tsc_status':
                     tsc_status = row['TSC Status'].values[0]
-                    dispatcher.utter_message(text=f"TSC Status: {tsc_status}")
+                    dispatcher.utter_message(text=f"TSC Status of {software_name}: {tsc_status}")
+                    return [SlotSet("software", None)]
 
                 elif prev_intent == 'get_installation_count':
                     installation_count = row['Install Count'].values[0]
-                    dispatcher.utter_message(text=f"Installation Count: {installation_count}")
+                    dispatcher.utter_message(text=f"Installation Count of {software_name}: {installation_count}")
+                    return [SlotSet("software", None)]
 
                 elif prev_intent == 'get_architect':
                     architect = row['Architect'].values[0]
                     dispatcher.utter_message(text=f"The architect of {software_name} is {architect}")
+                    return [SlotSet("software", None)]
             else:
                 dispatcher.utter_message(response="utter_software_not_found")
 
