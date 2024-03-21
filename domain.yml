@@ -56,19 +56,29 @@ slots:
     mappings:
       - type: from_entity
         entity: soft
-  
+
   software:
     type: text
     mappings:
       - type: from_entity
         entity: Software
 
-
-  
-
 responses:
   utter_greet:
     - text: "Hey! How are you?"
+      buttons:
+        - title: "Find Architect"
+          payload: "/get_architect"
+        - title: "Find Vendor"
+          payload: "/get_vendor_name"
+        - title: "License Status"
+          payload: "/check_license_required"
+        - title: "TSC Status"
+          payload: "/check_tsc_status"
+        - title: "Installation Count"
+          payload: "/get_installation_count"
+        - title: "Phaseout Date"
+          payload: "/get_phaseout_date"
 
   utter_cheer_up:
     - text: "Here is something to cheer you up:"
@@ -107,6 +117,9 @@ responses:
 
   utter_architect_response:
     - text: "The architect of {software_name} is {architect_name}."
+
+  utter_software_not_found:
+    - text: "Sorry, I could not find {software_name} in the system."
 
 actions:
   # - action_get_weather

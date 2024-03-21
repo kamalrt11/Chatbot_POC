@@ -289,7 +289,8 @@ class ActionFetchSoftwareInfo(Action):
         software_name = tracker.get_slot('software')
         # dispatcher.utter_message(text=f"{software_name}")
 
-        data = pd.read_excel('MOCK_DATA.xlsx')
+        data = pd.read_excel('MOCK_DATA.xlsx', engine='openpyxl')
+
 
         user_events = [event for event in tracker.events if event.get("event") == "user"]
 

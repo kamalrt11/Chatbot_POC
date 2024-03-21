@@ -21,6 +21,7 @@ import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
 const RasaChatWidget = () => {
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState("");
+  const [showButtons, setShowButtons] = useState(false); // State to control button visibility
   const textFieldRef = useRef(null);
 
   useEffect(() => {
@@ -47,6 +48,38 @@ const RasaChatWidget = () => {
         {
           sender: "test_user",
           message: userInput,
+        }
+      );
+
+      const botResponses = response.data.map((botMsg) => ({
+        text: botMsg.text,
+        sender: "Bot",
+      }));
+
+      botResponses.forEach((botMsg) => {
+        addMessage(botMsg.text, "Bot");
+        if (botMsg.text === "Hey! How are you?") {
+          setShowButtons(true); // Show buttons when the bot message is "Hey! How are you?"
+        }
+      });
+    } catch (error) {
+      console.error("Error sending message to Rasa:", error);
+    }
+  };
+
+  const handleButtonClick = (payload) => {
+    setShowButtons(false); // Hide buttons when a button is clicked
+    addMessage(payload, "You");
+    sendMessageToRasa(payload);
+  };
+
+  const sendMessageToRasa = async (payload) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5005/webhooks/rest/webhook",
+        {
+          sender: "test_user",
+          message: payload,
         }
       );
 
@@ -183,6 +216,38 @@ const RasaChatWidget = () => {
         ))}
       </List>
 
+       {/* Display buttons if showButtons is true */}
+      
+      {showButtons && (
+         <Grid container alignItems="center" justify="center" spacing={2} style={{marginTop: '20px'}}>
+         <Grid item xs={12} style={{ padding: "2%" }}>
+           <Typography variant="h6" gutterBottom style={{ textAlign: "center" }}>
+             What are you looking for? (Pick any)
+           </Typography>
+           <div style={{ display: "flex", justifyContent: "center" , gap: '15px'}}>
+             <Button variant="contained" onClick={() => handleButtonClick("/get_architect")}>
+               Find Architect
+             </Button>
+             <Button variant="contained" onClick={() => handleButtonClick("/get_vendor_name")}>
+               Find Vendor
+             </Button>
+             <Button variant="contained" onClick={() => handleButtonClick("/check_license_required")}>
+               License Status
+             </Button>
+             <Button variant="contained" onClick={() => handleButtonClick("/check_tsc_status")}>
+               TSC Status
+             </Button>
+             <Button variant="contained" onClick={() => handleButtonClick("/get_installation_count")}>
+               Installation Count
+             </Button>
+             <Button variant="contained" onClick={() => handleButtonClick("/get_phaseout_date")}>
+               Phaseout Date
+             </Button>
+           </div>
+         </Grid>
+       </Grid>
+     )}
+
       <Grid container alignItems="center" justify="center" spacing={2}>
         <Grid item xs={10} style={{ padding: "2%" }}>
           <TextField
@@ -213,8 +278,10 @@ const RasaChatWidget = () => {
           </Button>
         </Grid>
       </Grid>
-    </div>
-  );
+
+     
+   </div>
+ );
 };
 
 export default RasaChatWidget;
